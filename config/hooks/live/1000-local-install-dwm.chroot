@@ -8,7 +8,7 @@ BUILDDIR=/tmp/build-dwm
 RUN_PACKAGES="libx11-6 libxinerama1 libxrandr2 libxi6"
 BUILD_PACKAGES="git gcc make libx11-dev libxinerama-dev libxrandr-dev libxi-dev"
 
-apt install $RUN_PACKAGES $BUILD_PACKAGES
+apt install -y $RUN_PACKAGES $BUILD_PACKAGES
 
 mkdir -p $BUILDDIR
 cd $BUILDDIR
@@ -20,6 +20,6 @@ make install clean
 rm -rf $BUILDDIR
 
 apt-mark auto $BUILD_PACKAGES
-apt autoremove
+apt autoremove -y
 
 echo "^^^^ INSTALL DWM END ^^^^"
