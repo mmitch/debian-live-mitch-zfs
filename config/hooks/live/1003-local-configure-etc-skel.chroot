@@ -1,0 +1,28 @@
+#!/bin/sh
+
+set -e
+
+echo "vvv CONFIGURE /etc/skel START vvv"
+
+BUILDDIR=/tmp/checkout-mitchscripts
+RUN_PACKAGES=""
+BUILD_PACKAGES="git"
+
+apt install -y $RUN_PACKAGES $BUILD_PACKAGES
+
+mkdir -p $BUILDDIR
+cd $BUILDDIR
+git clone -- https://github.com/mmitch/mitchscripts.git .
+
+SKEL=/etc/skel
+cd mitchscripts/config
+cat .bashrc >> $SKEL/.bashrc
+cp .alias $SKEL/.bashrc_aliases
+cp .Xresources .dwm-startup .dwm-status .emacs .xinitrc $SKEL
+
+rm -rf $BUILDDIR
+
+apt-mark auto $BUILD_PACKAGES
+apt autoremove -y
+
+echo "^^^^ CONFIGURE /etc/skel END ^^^^"
