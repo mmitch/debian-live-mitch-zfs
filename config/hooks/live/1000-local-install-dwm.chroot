@@ -9,6 +9,7 @@ RUN_PACKAGES="libx11-6 libxinerama1 libxrandr2 libxi6"
 BUILD_PACKAGES="git gcc make libx11-dev libxinerama-dev libxrandr-dev libxi-dev"
 
 apt install -y $RUN_PACKAGES $BUILD_PACKAGES
+apt-mark auto $BUILD_PACKAGES
 
 mkdir -p $BUILDDIR
 cd $BUILDDIR
@@ -18,8 +19,5 @@ git checkout mitch
 make install clean
 
 rm -rf $BUILDDIR
-
-apt-mark auto $BUILD_PACKAGES
-apt autoremove -y
 
 echo "^^^^ INSTALL DWM END ^^^^"

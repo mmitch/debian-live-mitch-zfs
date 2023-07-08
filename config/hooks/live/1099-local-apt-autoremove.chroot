@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -e
+
+echo "vvv REMOVE PACKAGES ONLY NEEDED DURING BUILD START vvv"
+
+apt autoremove -y
+
+echo "^^^^ REMOVE PACKAGES ONLY NEEDED DURING BUILD END ^^^^"

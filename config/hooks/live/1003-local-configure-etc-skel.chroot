@@ -9,6 +9,7 @@ RUN_PACKAGES=""
 BUILD_PACKAGES="git"
 
 apt install -y $RUN_PACKAGES $BUILD_PACKAGES
+apt-mark auto $BUILD_PACKAGES
 
 mkdir -p $BUILDDIR
 cd $BUILDDIR
@@ -21,8 +22,5 @@ cp .alias $SKEL/.bashrc_aliases
 cp .Xresources .dwm-startup .dwm-status .emacs .xinitrc $SKEL
 
 rm -rf $BUILDDIR
-
-apt-mark auto $BUILD_PACKAGES
-apt autoremove -y
 
 echo "^^^^ CONFIGURE /etc/skel END ^^^^"
