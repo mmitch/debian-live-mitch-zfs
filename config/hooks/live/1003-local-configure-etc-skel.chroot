@@ -20,7 +20,12 @@ SKEL=/etc/skel
 cd config
 cat .bashrc >> $SKEL/.bashrc
 cp .alias $SKEL/.bash_aliases
-cp .Xresources .dwm-status .emacs .xinitrc $SKEL
+cp .Xresources .dwm-status .emacs $SKEL
+
+# ?? something does not work with prestart/daemon mode:
+# emacs has 100% cpu and is changing PIDs, look like restarts
+# just skip the preload
+sed 's/^ifpresent emacs/### ifpresent emacs/' < .xinitrc > $SKEL/.xinitrc
 
 cd ../bash
 cp emacs /usr/local/bin
