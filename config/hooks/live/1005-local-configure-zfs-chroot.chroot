@@ -1,0 +1,43 @@
+#!/bin/sh
+
+set -e
+
+echo "vvv CONFIGURE zfs-chroot START vvv"
+
+# provide a mountpoint
+
+CHROOT=/mnt/zfsroot
+
+mkdir -p $CHROOT
+ls -lhd $CHROOT
+
+# provide chroot helper scripts
+
+BINDIR=/usr/local/bin
+MOUNT=$BINDIR/chroot-bind-mount
+ENTER=$BINDIR/chroot-enter
+UMOUNT=$BINDIR/chroot-bind-umount
+
+cat > $MOUNT <<EOF
+#!/bin/sh
+for dir in dev proc sys; do
+    sudo mount --verbose --make-private --rbind /\$dir $CHROOT/\$dir
+done
+EOF
+
+cat > $ENTER <<EOF
+#!/bin/sh
+sudo chroot $CHROOT bash --login
+EOF
+
+cat > $UMOUNT <<EOF
+#!/bin/sh
+for dir in dev proc sys; do
+    sudo umount --verbose $CHROOT/\$dir
+done
+EOF
+
+chmod +x $MOUNT $ENTER $UMOUNT
+ls -lh $BINDIR
+
+echo "^^^^ CONFIGURE zfs-chroot END ^^^^"

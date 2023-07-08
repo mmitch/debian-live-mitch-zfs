@@ -23,6 +23,20 @@ cat >> /etc/issue <<'EOF'
   |                 |
   '-----------------'
 
+ZFS cheatsheet:
+
+ * sudo zpool import -R /mnt/zfsroot -f -a
+
+ZFS chroot is prepared at /mnt/zfsroot
+Helper scripts (no sudo needed) are
+
+ * chroot-bind-mount
+ * chroot-enter
+ * chroot-bund-umount
+
+
+
+Reread this message with `cat /etc/issue`
 
 EOF
 
