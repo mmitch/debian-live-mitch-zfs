@@ -19,7 +19,7 @@ cat >> /etc/issue <<'EOF'
   |  .d8P'.d8P'.d8  |   To start another window manager, you can run
   |  888  888  888  |   WINDOWMANAGER=/usr/bin/fluxbox startx
   |  888  888  888  |
-  |  888  888  888  |   For Wifi/WLAN use iw, iwd, wpasupplicant or wpagui
+  |  888  888  888  |   For Wifi/WLAN use iw, iwd, wpasupplicant or wpa_gui
   |                 |
   '-----------------'
 
