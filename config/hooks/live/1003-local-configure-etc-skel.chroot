@@ -16,7 +16,8 @@ cd $BUILDDIR
 git clone -- https://github.com/mmitch/mitchscripts.git .
 
 SKEL=/etc/skel
-cd mitchscripts/config
+
+cd config
 cat .bashrc >> $SKEL/.bashrc
 cp .alias $SKEL/.bashrc_aliases
 cp .Xresources .dwm-startup .dwm-status .emacs .xinitrc $SKEL
