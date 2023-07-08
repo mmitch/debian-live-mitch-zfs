@@ -1,4 +1,4 @@
-.PHONY: all build clean find-stick
+.PHONY: all build clean write
 
 all: clean build
 
@@ -8,5 +8,5 @@ clean:
 build:
 	nice -n 10 lb build
 
-find-stick:
-	./find-stick
+write:
+	./write-to-stick

@@ -1,0 +1,25 @@
+#!/bin/bash
+
+find-stick() {
+    while read -r name; do
+	target="/dev/disk/by-id/$name"
+	[ -e "$target" ] && echo "$target"
+    done <<EOF
+usb-Intenso_Rainbow_10101400036119-0:0
+EOF
+}
+
+die() {
+    echo "$@" >&2
+    exit 1
+}
+
+IMG=live-image-amd64.hybrid.iso
+STICK=$(find-stick)
+
+[ -r "$IMG" ] || die "no image found!"
+[ "$STICK"  ] || die "no known stick found!"
+
+ls -lh "$STICK" "$IMG"
+dd if="$IMG" of="$STICK" bs=8M status=progress
+sync
