@@ -22,6 +22,9 @@ cat .bashrc >> $SKEL/.bashrc
 cp .alias $SKEL/.bash_aliases
 cp .Xresources .dwm-status .emacs .xinitrc $SKEL
 
+cd ../bash
+cp emacs /usr/local/bin
+
 rm -rf $BUILDDIR
 
 echo "^^^^ CONFIGURE /etc/skel END ^^^^"
