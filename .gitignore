@@ -1,0 +1,9 @@
+.build/
+binary.modified_timestamps
+binary/
+build.log
+cache/
+chroot.*
+chroot/
+config/
+live-image-*
