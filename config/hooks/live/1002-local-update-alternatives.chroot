@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+echo "vvv UPDATE-ALTERNATIVES START vvv"
+
+update-alternatives --set-selections <<EOF
+editor			manual	/usr/bin/emacs
+x-terminal-emulator	manual	/usr/bin/xterm
+EOF
+
+echo "^^^^ UPDATE-ALTERNATIVES END ^^^^"

@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set -e
+
+lb config noauto \
+	--distribution bookworm \
+	--architecture=amd64 \
+	--binary-images=iso-hybrid \
+	--iso-volume "Debian 12 ZFS Rescue Live" \
+	--archive-areas "main contrib non-free non-free-firmware" \
+	--linux-flavours "amd64" \
+	--linux-packages "linux-image linux-headers" \
+	"${@}"

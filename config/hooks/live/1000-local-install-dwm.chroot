@@ -1,0 +1,25 @@
+#!/bin/sh
+
+set -e
+
+echo "vvv INSTALL DWM START vvv"
+
+BUILDDIR=/tmp/build-dwm
+RUN_PACKAGES="libx11-6 libxinerama1 libxrandr2 libxi6"
+BUILD_PACKAGES="git gcc make libx11-dev libxinerama-dev libxrandr-dev libxi-dev"
+
+apt install $RUN_PACKAGES $BUILD_PACKAGES
+
+mkdir -p $BUILDDIR
+cd $BUILDDIR
+git clone -- https://github.com/mmitch/dwm-mitch.git .
+git checkout mitch
+
+make install clean
+
+rm -rf $BUILDDIR
+
+apt-mark auto $BUILD_PACKAGES
+apt autoremove
+
+echo "^^^^ INSTALL DWM END ^^^^"

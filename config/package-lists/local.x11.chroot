@@ -1,0 +1,12 @@
+emacs-gtk
+desktop-base
+xorg
+xserver-xorg-input-all
+xserver-xorg-video-all
+lightdm
+xauth
+xterm
+fluxbox
+firefox-esr
+evince
+pavucontrol

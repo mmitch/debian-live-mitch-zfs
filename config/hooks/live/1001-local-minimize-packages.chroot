@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -e
+
+echo "vvv MINIMIZE PACKAGES START vvv"
+
+apt-mark auto dahdi-firmware-nonfree nano ixo-usb-jtag mawk libfishcamp1 libsbig4 indi-dsi
+apt autoremove
+
+echo "^^^^ MINIMIZE PACKAGES END ^^^^"
