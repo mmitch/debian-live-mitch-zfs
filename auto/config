@@ -10,5 +10,5 @@ lb config noauto \
 	--archive-areas "main contrib non-free non-free-firmware" \
 	--linux-flavours "amd64" \
 	--linux-packages "linux-image linux-headers" \
-	--bootappend-live "boot=live components locales=de_DE.UTF-8,en_US.UTF-8 keyboard-layouts=de" \
+	--bootappend-live "boot=live components locales=de_DE.UTF-8,en_US.UTF-8 keyboard-layouts=de nox11autologin" \
 	"${@}"

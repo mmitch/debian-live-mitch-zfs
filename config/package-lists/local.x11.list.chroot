@@ -3,7 +3,7 @@ desktop-base
 xorg
 xserver-xorg-input-all
 xserver-xorg-video-all
-lightdm
+xinit
 xauth
 xterm
 fluxbox
