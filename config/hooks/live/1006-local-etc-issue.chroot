@@ -1,0 +1,37 @@
+#!/bin/sh
+
+set -e
+
+echo "vvv CONFIGURE /etc/issue START vvv"
+
+cat >> /etc/issue <<'EOF'
+
+
+  .-----------------.
+  |                 |   Run 'startx' to start the X server with
+  |      .d8P'.d8P  |   'dwm-mitch' as default window manager.
+  |    .d8P'.d8P'.  |
+  |  .d8P'.d8P'.d8  |   To start another window manager, you can run
+  |  888  888  888  |   WINDOWMANAGER=/usr/bin/fluxbox startx
+  |  888  888  888  |
+  |  888  888  888  |   For Wifi/WLAN use iw, iwd, wpasupplicant or wpa_gui
+  |                 |
+  '-----------------'   ZFS cheatsheet based on the ZFS on Root Debian Howtos:
+
+ * sudo zpool import -N -R /mnt/zfsroot -f -a  # import with altroot, don't mount
+ * sudo zfs load-key rpool                     # load key if encrypted
+ * sudo zfs mount rpool/ROOT/debian            # because of canmount=noauto
+ * sudo zfs mount -a                           # mount everything else
+
+Further helper scripts (no sudo needed) available are:
+
+ * chroot-bind-mount
+ * chroot-enter
+ * chroot-bund-umount
+
+Reread this message with `cat /etc/issue`
+
+
+EOF
+
+echo "^^^^ CONFIGURE /etc/issue END ^^^^"

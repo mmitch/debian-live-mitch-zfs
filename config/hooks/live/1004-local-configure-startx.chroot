@@ -9,35 +9,4 @@ cat >> /etc/skel/.xinitrc <<'EOF'
 ${WINDOWMANAGER:-/usr/local/bin/dwm-mitch}
 EOF
 
-cat >> /etc/issue <<'EOF'
-
-
-  .-----------------.
-  |                 |   Run 'startx' to start the X server   
-  |      .d8P'.d8P  |   with dwm-mitch as default window manager.
-  |    .d8P'.d8P'.  |
-  |  .d8P'.d8P'.d8  |   To start another window manager, you can run
-  |  888  888  888  |   WINDOWMANAGER=/usr/bin/fluxbox startx
-  |  888  888  888  |
-  |  888  888  888  |   For Wifi/WLAN use iw, iwd, wpasupplicant or wpa_gui
-  |                 |
-  '-----------------'
-
-ZFS cheatsheet:
-
- * sudo zpool import -R /mnt/zfsroot -f -a
-
-ZFS chroot is prepared at /mnt/zfsroot
-Helper scripts (no sudo needed) are
-
- * chroot-bind-mount
- * chroot-enter
- * chroot-bund-umount
-
-
-
-Reread this message with `cat /etc/issue`
-
-EOF
-
 echo "^^^^ CONFIGURE startx END ^^^^"
