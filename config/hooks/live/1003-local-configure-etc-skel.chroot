@@ -20,12 +20,15 @@ SKEL=/etc/skel
 cd config
 cat .bashrc >> $SKEL/.bashrc
 cp .alias $SKEL/.bash_aliases
-cp .Xresources .dwm-status .emacs $SKEL
+cp .Xresources .dwm-status .emacs .xinitrc $SKEL
 
-# ?? something does not work with prestart/daemon mode:
-# emacs has 100% cpu and is changing PIDs, look like restarts
-# just skip the preload
-sed 's/^ifpresent emacs/### ifpresent emacs/' < .xinitrc > $SKEL/.xinitrc
+cat >> $SKEL/.bashrc <<EOF
+
+# disable emacs native compilation - otherwise there is lots of 100% CPU on every boot
+EMACS_INHIBIT_AUTOMATIC_NATIVE_COMPILATION=t
+export EMACS_INHIBIT_AUTOMATIC_NATIVE_COMPILATION
+
+EOF
 
 cd ../bash
 cp emacs /usr/local/bin
