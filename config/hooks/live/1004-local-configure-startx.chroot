@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -e
+
+echo "vvv CONFIGURE startx START vvv"
+
+cat >> /etc/skel/.xinitrc <<'EOF'
+
+${WINDOWMANAGER:-/usr/local/bin/dwm-mitch}
+EOF
+
+cat >> /etc/issue <<'EOF'
+
+Run 'startx' to start the X server with dwm-mitch as default window manager.
+
+To start another window manager, you can run:
+WINDOWMANAGER=/usr/bin/fluxbox startx
+EOF
+
+echo "^^^^ CONFIGURE startx END ^^^^"
