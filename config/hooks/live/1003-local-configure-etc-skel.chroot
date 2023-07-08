@@ -20,7 +20,7 @@ SKEL=/etc/skel
 cd config
 cat .bashrc >> $SKEL/.bashrc
 cp .alias $SKEL/.bash_aliases
-cp .Xresources .dwm-startup .dwm-status .emacs .xinitrc $SKEL
+cp .Xresources .dwm-status .emacs .xinitrc $SKEL
 
 rm -rf $BUILDDIR
 
