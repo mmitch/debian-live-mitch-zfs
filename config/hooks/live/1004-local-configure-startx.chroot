@@ -10,11 +10,14 @@ ${WINDOWMANAGER:-/usr/local/bin/dwm-mitch}
 EOF
 
 cat >> /etc/issue <<'EOF'
+ 
+     .d8P'.d8P      
+   .d8P'.d8P'.   Run 'startx' to start the X server
+ .d8P'.d8P'.d8   with dwm-mitch as default window manager.
+ 888  888  888   To start another window manager, you can run
+ 888  888  888   WINDOWMANAGER=/usr/bin/fluxbox startx
+ 888  888  888
 
-Run 'startx' to start the X server with dwm-mitch as default window manager.
-
-To start another window manager, you can run:
-WINDOWMANAGER=/usr/bin/fluxbox startx
 EOF
 
 echo "^^^^ CONFIGURE startx END ^^^^"
