@@ -1,12 +1,12 @@
 .PHONY: all build clean write
 
-all: clean build
+all: build
 
 clean:
 	lb clean
 	-find . -name '*~' -delete -print
 
-build:
+build: clean
 	nice -n 10 lb build
 
 write:

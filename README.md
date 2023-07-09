@@ -16,9 +16,7 @@ To build the image:
    (Or, if you're me and have exactly my memory stick, run `make write`.  Have a look at `write-stick`
     to change USB devices targeted by `make write`.)
 
-To rebuild the image after any configuration change:
-
-1. run `make clean build`
+To rebuild the image after any configuration change, run `make build` again.
 
 
 references
