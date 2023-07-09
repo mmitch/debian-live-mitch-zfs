@@ -13,7 +13,7 @@ To build the image:
 2. install the `live-build` package
 3. run `make build` _as root_
 4. `cp` or `dd` the resulting `live-image-amd64.hybrid.iso` to a USB flash drive or burn it to a DVD  
-   (Or, if you're me and have exactly my memory stick, run `make write`.  Have a look at `write-stick`
+   (Or, if you're me and have exactly my memory stick, run `make write`.  Have a look at `write-to-stick`
     to change USB devices targeted by `make write`.)
 
 To rebuild the image after any configuration change, run `make build` again.
