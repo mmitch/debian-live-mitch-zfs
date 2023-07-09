@@ -18,7 +18,7 @@ iw
 iwd
 wpasupplicant
 sudo
-links
+elinks
 lynx
 console-setup
 gpm
