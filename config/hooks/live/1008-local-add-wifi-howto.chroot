@@ -1,0 +1,40 @@
+#!/bin/sh
+
+set -e
+
+echo "vvv ADD WIFI HOWTO START vvv"
+
+cat > /usr/share/doc/wifi-howto.txt <<'EOF'
+Add root privileges as needed.
+
+1. find device name with `/sbin/iw dev`
+   (should be wlan0 or similar)
+
+2. ensure device is UP
+   `ip link show wlan0`
+   `ip link set wlan0 up`
+
+3. check connection status
+   `/sbin/iw wlan0 link`
+   (expected to not be connected)
+
+4. scan for network SSIDs
+   `/sbin/iw wlan0 scan`
+
+5. generate configuration with WLAN psk/passphrase
+   `wpa_passphrase $SSID >> /etc/wpa_supplicant.conf`
+
+6. run wpa_supplicant
+   `wpa_supplicant -D wext -i wlan0 -c /etc/wpa_supplicant.conf`
+
+   - add `-B` to run in background
+   - see above to check for connection status
+
+7. configure IP
+   `dhclient wlan0` or `ip addr add IFADDR dev IFNAME`
+
+8. configure routing
+   `ip route add default via 192.168.1.254 dev wlan0`
+EOF
+
+echo "^^^^ ADD WIFI HOWTO END ^^^^"

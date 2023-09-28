@@ -7,14 +7,14 @@ echo "vvv CONFIGURE /etc/issue START vvv"
 cat >> /etc/issue <<'EOF'
 
 
-  .-----------------.
-  |                 |   Run 'startx' to start the X server with
-  |      .d8P'.d8P  |   'dwm-mitch' as default window manager.
-  |    .d8P'.d8P'.  |
-  |  .d8P'.d8P'.d8  |   To start another window manager, you can run
-  |  888  888  888  |   WINDOWMANAGER=/usr/bin/fluxbox startx
+  .-----------------.   Run 'startx' to start the X server with
+  |                 |   'dwm-mitch' as default window manager.
+  |      .d8P'.d8P  |
+  |    .d8P'.d8P'.  |   To start another window manager, you can run
+  |  .d8P'.d8P'.d8  |   WINDOWMANAGER=/usr/bin/fluxbox startx
   |  888  888  888  |
   |  888  888  888  |   For Wifi/WLAN use iw, iwd, wpasupplicant or wpa_gui
+  |  888  888  888  |   See /usr/share/doc/wifi-howto.txt for details.
   |                 |
   '-----------------'   ZFS cheatsheet based on the ZFS on Root Debian Howtos:
 
