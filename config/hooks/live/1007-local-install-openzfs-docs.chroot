@@ -1,0 +1,33 @@
+#!/bin/sh
+
+set -e
+
+echo "vvv INSTALL OPENZFS-DOCS vvv"
+
+BUILDVENV=/tmp/venv-openzfs
+BUILDDIR=/tmp/build-openzfs
+INSTALLDIR=/usr/share/doc/openzfs-docs
+RUN_PACKAGES=""
+BUILD_PACKAGES="git make python3-pip python3-venv"
+
+apt install -y $RUN_PACKAGES $BUILD_PACKAGES
+apt-mark auto $BUILD_PACKAGES
+
+mkdir -p $BUILDVENV
+python3 -m venv $BUILDVENV
+. $BUILDVENV/bin/activate
+
+mkdir -p $BUILDDIR
+cd $BUILDDIR
+git clone -- https://github.com/openzfs/openzfs-docs.git .
+cd docs
+python3 -m pip install -r requirements.txt
+make html
+
+mkdir $INSTALLDIR
+cd _build/html
+cp -vr . $INSTALLDIR
+
+rm -rf $BUILDDIR $BUILDVENV
+
+echo "^^^^ INSTALL OPENZFS-DOCS ^^^^"

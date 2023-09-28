@@ -29,6 +29,8 @@ Further helper scripts (no sudo needed) available are:
  * chroot-enter
  * chroot-bund-umount
 
+Full openzfs-docs are available at /usr/share/doc/openzfs-docs/index.html
+
 Reread this message with `cat /etc/issue`
 
 
