@@ -31,6 +31,11 @@ Further helper scripts (no sudo needed) available are:
 
 Full openzfs-docs are available at /usr/share/doc/openzfs-docs/index.html
 
+sanoid/syncoid is installed, so a whole pool can be cloned like this:
+% syncoid -r --no-sync-snap --keep-sync-snap --preserve-recordsize rpool-old rpool
+TODO: figure out how to sync all PROPERTIES - they will need to be fixed by hand
+Should be doable with --sendoptions/--recvoptions but I did not yet test this.
+
 Reread this message with `cat /etc/issue`
 
 
