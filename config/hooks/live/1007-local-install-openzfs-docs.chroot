@@ -19,7 +19,7 @@ python3 -m venv $BUILDVENV
 
 mkdir -p $BUILDDIR
 cd $BUILDDIR
-git clone -- https://github.com/openzfs/openzfs-docs.git .
+git clone --depth 1 -- https://github.com/openzfs/openzfs-docs.git .
 cd docs
 python3 -m pip install -r requirements.txt
 make html

@@ -13,8 +13,7 @@ apt-mark auto $BUILD_PACKAGES
 
 mkdir -p $BUILDDIR
 cd $BUILDDIR
-git clone -- https://github.com/mmitch/dwm-mitch.git .
-git checkout mitch
+git clone --depth 1 --branch mitch -- https://github.com/mmitch/dwm-mitch.git .
 
 make install clean
 
