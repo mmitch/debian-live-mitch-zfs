@@ -1,0 +1,23 @@
+#!/bin/sh
+
+set -e
+
+echo "vvv INSTALL LIST-ZFS-SNAPSHOTS vvv"
+
+BUILDDIR=/tmp/build-list-zfs-snapshots
+INSTALLDIR=/usr/local/bin
+RUN_PACKAGES="libnumber-bytes-human-perl"
+BUILD_PACKAGES="git"
+
+apt install -y $RUN_PACKAGES $BUILD_PACKAGES
+apt-mark auto $BUILD_PACKAGES
+
+mkdir -p $BUILDDIR
+cd $BUILDDIR
+git clone -- https://github.com/mmitch/list-zfs-snapshots.git .
+
+cp -v list-zfs-snapshots $INSTALLDIR
+
+rm -rf $BUILDDIR
+
+echo "^^^^ INSTALL INSTALL LIST-ZFS-SNAPSHOTS ^^^^"
