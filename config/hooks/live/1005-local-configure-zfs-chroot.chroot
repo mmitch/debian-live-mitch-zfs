@@ -33,7 +33,7 @@ EOF
 cat > $UMOUNT <<EOF
 #!/bin/sh
 for dir in dev proc sys; do
-    sudo umount --verbose $CHROOT/\$dir
+    sudo umount --verbose -l $CHROOT/\$dir
 done
 EOF
 
