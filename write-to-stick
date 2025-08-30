@@ -6,6 +6,7 @@ find-stick() {
 	[ -e "$target" ] && echo "$target"
     done <<EOF
 usb-Intenso_Rainbow_10101400036119-0:0
+usb-Kingston_DataTraveler_G3_000FEAFB704CFB91C720234A-0:0
 EOF
 }
 
