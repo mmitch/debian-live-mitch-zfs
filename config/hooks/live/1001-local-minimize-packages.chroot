@@ -4,6 +4,7 @@ set -e
 
 echo "vvv MINIMIZE PACKAGES START vvv"
 
-apt-mark auto dahdi-firmware-nonfree nano ixo-usb-jtag mawk libfishcamp1 libsbig4 indi-dsi
+# TODO: recheck from booted stick
+apt-mark auto dahdi-firmware-nonfree nano mawk indi-dsi
 
 echo "^^^^ MINIMIZE PACKAGES END ^^^^"

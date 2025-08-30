@@ -3,10 +3,10 @@
 set -e
 
 lb config noauto \
-	--distribution bookworm \
+	--distribution trixie \
 	--architecture=amd64 \
 	--binary-images=iso-hybrid \
-	--iso-volume "Debian 12 ZFS Rescue Live" \
+	--iso-volume "Debian 13 ZFS Rescue Live" \
 	--archive-areas "main contrib non-free non-free-firmware" \
 	--linux-flavours "amd64" \
 	--linux-packages "linux-image linux-headers" \
