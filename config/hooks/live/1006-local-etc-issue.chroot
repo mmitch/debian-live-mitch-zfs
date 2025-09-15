@@ -23,6 +23,11 @@ cat >> /etc/issue <<'EOF'
  * sudo zfs mount rpool/ROOT/debian            # because of canmount=noauto
  * sudo zfs mount -a                           # mount everything else
 
+Mount a pool with a duplicate name:
+
+ * use 'zfs import' to get the numeric id
+ * zpool import <id> -o readonly=on -t temp_name -R altroot
+
 Further helper scripts (no sudo needed) available are:
 
  * chroot-bind-mount
