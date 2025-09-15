@@ -33,7 +33,9 @@ EOF
 cat > $UMOUNT <<EOF
 #!/bin/sh
 for dir in dev proc sys; do
-    sudo umount --verbose -l $CHROOT/\$dir
+    for mount in \$(mount | awk '{print \$3}' | grep ^$CHROOT/\$dir | tac); do
+        sudo umount --verbose -l \$mount
+    done
 done
 EOF
 
