@@ -34,6 +34,8 @@ Further helper scripts (no sudo needed) available are:
  * chroot-enter
  * chroot-bind-umount
 
+Check out 'sudo systemd-nspawn -D $chroot' instead, should be easier.
+
 Full openzfs-docs are available at /usr/share/doc/openzfs-docs/index.html
 
 sanoid/syncoid is installed, so a whole pool can be cloned like this:
