@@ -1,5 +1,5 @@
-live-build configuration for a personalised Debian 12 (Bookworm) rescue system with ZFS support
-===============================================================================================
+live-build configuration for a personalised Debian 13 (Trixie) rescue system with ZFS support
+=============================================================================================
 
 [[GitHub project page](https://github.com/mmitch/debian-live-mitch-zfs)]
 
