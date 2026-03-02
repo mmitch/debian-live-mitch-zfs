@@ -31,7 +31,8 @@ Add root privileges as needed.
    - see above to check for connection status
 
 7. configure IP
-   `dhclient wlan0` or `ip addr add IFADDR dev IFNAME`
+   `dhclient wlan0`, `dhcpcd wlan0` (should also do IPv6 autoconfig)
+    or `ip addr add IFADDR dev IFNAME` (fixed IP)
 
 8. configure routing
    `ip route add default via 192.168.1.254 dev wlan0`
