@@ -22,5 +22,5 @@ STICK=$(find-stick)
 [ "$STICK"  ] || die "no known stick found!"
 
 ls -lh "$STICK" "$IMG"
-dd if="$IMG" of="$STICK" bs=8M status=progress
+dd if="$IMG" of="$STICK" bs=16M status=progress oflag=sync
 sync
