@@ -17,9 +17,11 @@ lynx
 mc
 mdadm
 mokutil
+nvme-cli
 openssh-client
 openssh-server
 screen
+smartmontools
 sudo
 util-linux
 vim
