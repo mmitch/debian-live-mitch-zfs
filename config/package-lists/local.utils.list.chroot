@@ -16,6 +16,7 @@ lvm2
 lynx
 mc
 mdadm
+mokutil
 openssh-client
 openssh-server
 screen
