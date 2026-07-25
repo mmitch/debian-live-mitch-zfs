@@ -2,6 +2,7 @@ alsa-utils
 avahi-daemon
 console-setup
 curl
+debootstrap
 dhcpcd
 efibootmgr
 eject
